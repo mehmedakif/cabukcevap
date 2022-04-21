@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { useTheme } from "../../context/ThemeContext"
 import { Button, Slider, Card, Row, Col, Divider } from 'antd';
 import 'antd/dist/antd.css';
-import { useTheme } from "../../context/ThemeContext"
+import PropTypes from "prop-types"
 
-function WordCard(){
+function WordCard({
+      _paragraph, 
+      defaultSpeed}){
     const {theme} = useTheme();
-    const [paragraph, setParagraph] = useState("İnsanoğlunun diğer varlıklardan (en azından şuanda bildiklerimizden) farkı nedir? Düşünmek. Düşüncelerimizi iyi bir biçimde birleştirmek. Bu yeteneği, memeli canlılara has olan gelişmiş neokorteksimizin ekstra olarak yetenekli olmasına borçluyuz. Bu sayesinde temel ihtiyaçlarımızı düşünmekle kalmayıp; geleceğimizi, gezegenimizi, insanlığın faydasını da düşünebilme yetisine sahibiz. Düşünebildiklerimizin neden ve sonuçlarını da bir çatı altında topluyoruz: Bilim.");
+    const [paragraph, setParagraph] = useState(_paragraph);
     const [wordArray, setWordArray] = useState([]);
     const [buttonType, setButtonType] = useState("primary");
     const [sliderStatus, setSliderStatus] = useState(false);
-    const [speed, setSpeed] = useState(200);
+    const [speed, setSpeed] = useState(defaultSpeed ? defaultSpeed: 200);
 
     useEffect(() => {
         setWordArray(paragraph.toUpperCase().split(" "))
@@ -38,15 +41,12 @@ function WordCard(){
       
     return(
         <div>
-          <Row justify="center">
-            <Col span={4}>
               <Card 
                 cover={<img alt="example" src="https://images.unsplash.com/photo-1635469564142-b328835d1187?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1325&q=80" />}
                 title="Neokorteks" 
                 extra={<a href="#">Paragraph</a>} 
                 style={{ width: 320 }}>
                 <div>
-
                     <Row justify="center">
                       <Col>
                       <div>
@@ -68,7 +68,7 @@ function WordCard(){
                         <Slider 
                           disabled={sliderStatus}
                           span={14}
-                          defaultValue={speed} 
+                          defaultValue={defaultSpeed} 
                           min={100} 
                           max={1500} 
                           onChange={(value)=> {
@@ -81,10 +81,13 @@ function WordCard(){
                     </Row>    
                 </div>
               </Card>
-            </Col>
-          </Row> 
         </div> 
     )
+}
+
+WordCard.propTypes={
+  _paragraph: PropTypes.string.isRequired,
+  defaultSpeed: PropTypes.number
 }
 
 export default WordCard;
