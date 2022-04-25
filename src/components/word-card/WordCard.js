@@ -6,7 +6,8 @@ import PropTypes from "prop-types"
 
 function WordCard({
       _paragraph, 
-      defaultSpeed}){
+      defaultSpeed,
+      title}){
     const {theme} = useTheme();
     const [paragraph, setParagraph] = useState(_paragraph);
     const [wordArray, setWordArray] = useState([]);
@@ -43,7 +44,7 @@ function WordCard({
         <div>
               <Card 
                 cover={<img alt="example" src="https://images.unsplash.com/photo-1635469564142-b328835d1187?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1325&q=80" />}
-                title="Neokorteks" 
+                title={title} 
                 extra={<a href="#">Paragraph</a>} 
                 style={{ width: 320 }}>
                 <div>
