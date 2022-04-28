@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from "../../context/ThemeContext"
-import { Button, Slider, Card, Row, Col, Divider } from 'antd';
+import { Button, Slider, Card, Row, Col, Divider, Modal } from 'antd';
 import 'antd/dist/antd.css';
 import PropTypes from "prop-types"
 
@@ -13,6 +13,7 @@ function WordCard({
     const [wordArray, setWordArray] = useState([]);
     const [buttonType, setButtonType] = useState("primary");
     const [sliderStatus, setSliderStatus] = useState(false);
+    const [modalVisible, setModalVisible] = useState(false);
     const [speed, setSpeed] = useState(defaultSpeed ? defaultSpeed: 200);
 
     useEffect(() => {
@@ -36,16 +37,35 @@ function WordCard({
         setIterator(prevCount => prevCount + 1);
       }, speed);
       setIntervalId(newIntervalId);
-      
-    };
+      };
+
+      const modalClickHandler = ()=> {
+        setModalVisible(true)
+      }
+
+      const onOk = ()=> {
+        setModalVisible(false)
+      }
     
       
     return(
         <div>
+              <Modal 
+                width={800}
+                footer={[
+                  <Button onClick={onOk}>
+                    Kapat
+                  </Button>,
+                ]} 
+                visible={modalVisible}>
+                <div>
+                  {paragraph}
+                </div>
+              </Modal>
               <Card 
                 cover={<img alt="example" src="https://images.unsplash.com/photo-1635469564142-b328835d1187?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1325&q=80" />}
                 title={title} 
-                extra={<a href="#">Paragraph</a>} 
+                extra={<Button onClick={modalClickHandler}>Paragraph</Button>} 
                 style={{ width: 320 }}>
                 <div>
                     <Row justify="center">
@@ -55,15 +75,12 @@ function WordCard({
                       </div>
                       </Col>
                     </Row>
-                    
                     <Button block
                       type={buttonType}
                       onClick={handleClick}>
                         {intervalId ? "STOP" : "START"}
                     </Button>
-
                     <Divider orientation="left">Speed</Divider>
-
                     <Row justify="space-between">
                     <Col flex="auto">
                         <Slider 
@@ -82,6 +99,7 @@ function WordCard({
                     </Row>    
                 </div>
               </Card>
+              
         </div> 
     )
 }
