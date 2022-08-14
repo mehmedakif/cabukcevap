@@ -51,7 +51,7 @@ function WordCard({
     return(
         <div>
               <Modal 
-                width={800}
+                width={700}
                 footer={[
                   <Button onClick={onOk}>
                     Kapat
@@ -66,7 +66,7 @@ function WordCard({
                 cover={<img alt="example" src="https://images.unsplash.com/photo-1635469564142-b328835d1187?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1325&q=80" />}
                 title={title} 
                 extra={<Button onClick={modalClickHandler}>Paragraph</Button>} 
-                style={{ width: 320 }}>
+                style={{ width: 300, backgroundColor: "#bdb5a8"}}>
                 <div>
                     <Row justify="center">
                       <Col>

@@ -1,14 +1,13 @@
 import React,{ useEffect, useState } from "react";
-import Header from "./Header";
 import cardAPI from "../api/CardAPI";
 import { useTheme } from "../context/ThemeContext"
 import WordCard from "../components/word-card/WordCard"
-import {Row, Col, Divider} from "antd"
+import {Row, Col, Layout, Divider} from "antd"
 
 
 
 function Container(){
-    const {theme} = useTheme();
+    const {theme} = useTheme('dark');
     const [paragraphs, setParagraphs] = useState([]);
 
     React.useEffect(() => {
@@ -27,7 +26,7 @@ function Container(){
                 </Col>
             ));
         return(
-            <Row justify="space-around">
+            <Row justify="space-around" >
                {elements}
             </Row>
         )
@@ -35,11 +34,11 @@ function Container(){
 
 
     return(
-        <div className={`app ${theme}`}>
-            <Header/>
+        <Layout.Content>
             <Divider/>
             {GetGrid()}
-        </div> 
+            <Divider/>
+        </Layout.Content>
     )
 }
 

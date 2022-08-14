@@ -1,18 +1,20 @@
 import React from "react";
 import { useTheme } from "../context/ThemeContext"
-import {Divider} from "antd"
+import {Divider, Layout} from "antd"
 
 
 
 function NotFound(){
     const {theme} = useTheme();
     return(
+        <Layout.Content>
         <div className={`app ${theme}`}>
             <h1>
                 404 NotFound
             </h1>
-            <Divider/>
-        </div> 
+        </div>  
+        </Layout.Content>
+
     )
 }
 

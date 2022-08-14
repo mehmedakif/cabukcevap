@@ -1,0 +1,9 @@
+.navigation-gt {
+  width: 100.5%;
+  font-size: large;
+}
+
+.ant-menu-horizontal > .ant-menu-item::after,
+.ant-menu-horizontal > .ant-menu-submenu::after {
+  border-bottom: none !important;
+}
