@@ -1,5 +1,5 @@
 import { Layout } from "antd";
-import AppHeader from "../components/Header/AppHeader";
+import AppHeader from "../Components/Header/AppHeader";
 import Router from "../Router/Router";
 import "./Layout.scss";
 

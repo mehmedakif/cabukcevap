@@ -1,7 +1,7 @@
 import React,{ useEffect, useState } from "react";
-import cardAPI from "../api/CardAPI";
-import { useTheme } from "../context/ThemeContext"
-import WordCard from "../components/word-card/WordCard"
+import cardAPI from "../Api/CardAPI";
+import { useTheme } from "../Context/ThemeContext"
+import WordCard from "./word-card/WordCard"
 import {Row, Col, Layout, Divider} from "antd"
 
 

@@ -1,9 +1,8 @@
 import './App.css';
-import Container from "../src/components/Container"
-
-import {ThemeProvider} from "./context/ThemeContext";
+import Container from "../src/Components/Container"
+import {ThemeProvider} from "./Context/ThemeContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NotFound from './pages/NotFound';
+import NotFound from './Pages/NotFound';
 import AppLayout from './Layout/Layout';
 
 

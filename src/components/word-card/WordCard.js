@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useTheme } from "../../context/ThemeContext"
+import { useTheme } from "../../Context/ThemeContext"
 import { Button, Slider, Card, Row, Col, Divider, Modal } from 'antd';
 import 'antd/dist/antd.css';
 import PropTypes from "prop-types"

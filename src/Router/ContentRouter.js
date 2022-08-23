@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import NotFound from "../pages/NotFound";
-import Container from "../components/Container";
+import NotFound from "../Pages/NotFound";
+import Container from "../Components/Container";
 
 const ContentRouter = () => {
   return (
