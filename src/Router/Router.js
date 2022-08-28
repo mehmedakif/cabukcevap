@@ -1,13 +1,11 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import NotFound from "../Pages/NotFound";
-import Dashboard from "../Pages/Dashboard";
+import Dashboard from "../Components/Dashboard/Dashboard";
 
 const Router = () => {
   return (
     <Routes>
-      <Route path={"*"} element={<NotFound />} />
-      <Route path={"/home/*"} element={<Dashboard />} />
+      <Route path={"/*"} element={<Dashboard />} />
     </Routes>
 
   );
