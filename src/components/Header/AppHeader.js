@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
 import { Layout } from "antd";
 import Navigation from "../Navigation/Navigation";
-import "./AppHeader.scss";
-
+import "./AppHeader.scss"
 
 const AppHeader = () => {
   const [visible, setVisible] = useState(false);
@@ -33,7 +31,6 @@ const AppHeader = () => {
           closable={true}
           onClose={onClose}
           visible={visible}
-          width={250}
         >
           <Navigation />
         </Drawer>

@@ -1,4 +1,4 @@
-import { Menu } from "antd";
+import { Menu, Avatar } from "antd";
 import { HomeOutlined, UserOutlined, QuestionCircleOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import "./Navigation.scss";
@@ -15,25 +15,56 @@ const Navigation = () => {
 
   const items = [
     getItem(
-      <Link to={"/home"}>
+      <Link
+        to={"/profile"}>
+        <Avatar src="https://joeschmoe.io/api/v1/random" />
+      </Link>,      
+    ),
+    getItem(
+      <Link
+        className="styled-button"
+        to={"/home"}>
+        <HomeOutlined />
         <span>Home</span>
       </Link>,
       "home",
-      <HomeOutlined />
+      
     ),
     getItem(
-      <Link to={"/profile"}>
+      <Link 
+      className="styled-button"
+      to={"/profile"}>
+        <UserOutlined />
         <span>Profile</span>
       </Link>,
       "profile",
-      <UserOutlined />
     ),
     getItem(
-      <Link to={"/about"}>
+      <Link 
+        to={"/projects"}
+        className="styled-button">
+        <QuestionCircleOutlined />
+        <span>Projects</span>
+      </Link>,
+      "projects",
+    ),
+    getItem(
+      <Link 
+        to={"/howto"}
+        className="styled-button">
+        <QuestionCircleOutlined />
+        <span>How to</span>
+      </Link>,
+      "howto",
+    ),
+    getItem(
+      <Link 
+        to={"/about"}
+        className="styled-button">
+        <QuestionCircleOutlined />
         <span>About</span>
       </Link>,
       "about",
-      <QuestionCircleOutlined />
     ),
   ];
 

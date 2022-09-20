@@ -1,6 +1,6 @@
 import { Layout } from "antd";
-import ContentRouter from "../Router/ContentRouter";
-import "../pages/Dashboard.scss";
+import ContentRouter from "../../Router/ContentRouter";
+import "../Dashboard/Dashboard.scss"
 
 const Dashboard = () => {
   return (

@@ -1,8 +1,8 @@
 import React,{ useEffect, useState } from "react";
-import cardAPI from "../api/CardAPI";
-import { useTheme } from "../context/ThemeContext"
-import WordCard from "../components/word-card/WordCard"
-import {Row, Col, Layout, Divider} from "antd"
+import cardAPI from "../Api/CardAPI";
+import { useTheme } from "../Context/ThemeContext"
+import WordCard from "./Card/WordCard"
+import {Row, Col, Layout} from "antd"
 
 
 
@@ -23,6 +23,7 @@ function Container(){
                         _paragraph={element.paragraph}
                         title={element.title} 
                         defaultSpeed={element.defaultSpeed}/>
+                    <br></br>
                 </Col>
             ));
         return(
@@ -35,9 +36,7 @@ function Container(){
 
     return(
         <Layout.Content>
-            <Divider/>
             {GetGrid()}
-            <Divider/>
         </Layout.Content>
     )
 }
