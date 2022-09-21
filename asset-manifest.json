@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cabukcevap/static/css/main.7a6d4f94.css",
+    "main.js": "/cabukcevap/static/js/main.365ed3b4.js",
+    "index.html": "/cabukcevap/index.html",
+    "main.7a6d4f94.css.map": "/cabukcevap/static/css/main.7a6d4f94.css.map",
+    "main.365ed3b4.js.map": "/cabukcevap/static/js/main.365ed3b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7a6d4f94.css",
+    "static/js/main.365ed3b4.js"
+  ]
+}
